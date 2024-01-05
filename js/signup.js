@@ -34,7 +34,7 @@ else {
         password: newpassword.value,
       username:username.value,
       };
-      if (validateemail() == true && validatename() == true && validatepassword() == true && validaterepeatingemail() == true ) {
+      if (validateemail() == true && validatename() == true && validatepassword() == true && validaterepeatingemail() == true  ) {
            allusers.push(user);
            var Usersdata = JSON.stringify(allusers);
            localStorage.setItem("UsersData", Usersdata);
@@ -43,7 +43,7 @@ else {
            message.classList.add("text-success");
            console.log(baseURL);
            if (baseURL == "/") {
-             location.replace("https://" + location.hostname + "/home.html");
+             location.replace("https://" + location.hostname + "/index.html");
            } else {
              location.replace(baseURL + "/index.html");
            }
@@ -117,24 +117,26 @@ function validatepassword() {
 newpassword.addEventListener("blur",validatepassword)
   
 // login part
-var loginemail = document.getElementById("loginemail");
-var loginpassword = document.getElementById("loginpassword");
-var loginbtn = document.getElementById("loginbtn");
 
 function validaterepeatingemail() {
-  for (var i = 0; i < allusers.length; i++)
-    if (newemail.value != allusers[i].email) {
-            repeatingmsg.classList.add("d-none");
-            newemail.classList.add("is-valid");
-            newemail.classList.remove("is-invalid");
-     return true
-    }
-    else {
-      repeatingmsg.classList.remove("d-none");
-      newemail.classList.remove("is-valid");
-      newemail.classList.add("is-invalid"); 
-      return false;
-     }
+  if (localStorage.getItem("UsersData") !== null) {
+     for (var i = 0; i < allusers.length; i++)
+       if (newemail.value != allusers[i].email) {
+         repeatingmsg.classList.add("d-none");
+         newemail.classList.add("is-valid");
+         newemail.classList.remove("is-invalid");
+         return true;
+       } else {
+         repeatingmsg.classList.remove("d-none");
+         newemail.classList.remove("is-valid");
+         newemail.classList.add("is-invalid");
+         return false;
+       }
+  }
+  else {
+    return true;
+  }
+   
    
 }
 newemail.addEventListener("blur",validaterepeatingemail)
