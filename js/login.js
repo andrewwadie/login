@@ -30,7 +30,7 @@ function loginfun() {
         if (baseURL == "/") {
           location.replace("https://" + location.hostname + "/home.html");
         } else {
-          location.replace(location.hostname + "/home.html");
+          location.replace(baseURL+ "/home.html");
         }
         }
       else {

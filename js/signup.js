@@ -44,10 +44,10 @@ else {
            message.classList.add("text-center");
            message.classList.add("text-success");
            console.log(baseURL);
-           if (baseURL == "./") {
+           if (baseURL == "/") {
              location.replace("https://" + location.hostname + "/index.html");
            } else {
-             location.replace(location.hostname + "/index.html");
+             location.replace(baseURL + "/index.html");
            }
 
       }
