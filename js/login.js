@@ -28,9 +28,13 @@ function loginfun() {
       ) {
           var z = i
         if (baseURL == "/") {
-          location.replace("https://" + location.hostname + "/home.html");
+          location.replace(
+            "https://" + location.hostname + baseURL + "/home.html"
+          );
         } else {
-          location.replace("https://" + location.hostname + "/home.html");
+          location.replace(
+            "https://" + location.hostname + baseURL + "/home.html"
+          );
         }
         }
       else {

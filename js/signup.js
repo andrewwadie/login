@@ -45,9 +45,13 @@ else {
            message.classList.add("text-success");
            console.log(baseURL);
            if (baseURL == "/") {
-             location.replace("https://" + location.hostname +baseURL+ "/index.html");
+             location.replace(
+               "https://" + location.hostname + baseURL + "/index.html"
+             );
            } else {
-             location.replace("https://" + location.hostname +baseURL+ "/index.html");
+             location.replace(
+               "https://" + location.hostname + baseURL + "/index.html"
+             );
            }
 
       }
