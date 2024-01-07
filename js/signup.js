@@ -17,6 +17,7 @@ for (var i = 0; i < pathparts.length - 1; i++) {
   baseURL += "/" + pathparts[i];
 }
 console.log(baseURL);
+console.log(location.hostname);
 
 
 if (localStorage.getItem("UsersData") !== null) {
