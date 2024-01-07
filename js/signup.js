@@ -47,7 +47,7 @@ else {
            if (baseURL == "/") {
              location.replace("https://" + location.hostname + "/index.html");
            } else {
-             location.replace( "/index.html");
+             location.replace("https://" + location.hostname + "/index.html");
            }
 
       }
