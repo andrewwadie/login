@@ -11,6 +11,7 @@ for (var i = 0; i < pathparts.length - 1; i++) {
   baseURL += "/" + pathparts[i];
 }
 console.log(baseURL);
+console.log(location.hostname)
 
 if (localStorage.getItem("UsersData") !== null) {
   var allusers = JSON.parse(localStorage.getItem("UsersData"));
@@ -26,10 +27,10 @@ function loginfun() {
         loginpassword.value == allusers[i].password
       ) {
           var z = i
-        if (baseURL == "/") {
-          location.replace("https://" + location.hostname + "/home.html");
+        if (baseURL == "./") {
+          location.replace("https://" + location.hostname + "./home.html");
         } else {
-          location.replace(baseURL + "/home.html");
+          location.replace(baseURL + "./home.html");
         }
         }
       else {
