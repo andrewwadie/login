@@ -11,6 +11,7 @@ var repeatingmsg = document.getElementById("repeatingmail");
 // var lastindex = pathparts.length - 1;
 // console.log(lastindex)
 var pathparts = location.pathname.split("/");
+
 var baseURL = "";
 for (var i = 0; i < pathparts.length - 1; i++) {
   baseURL += "/" + pathparts[i];
@@ -43,9 +44,9 @@ else {
            message.classList.add("text-success");
            console.log(baseURL);
            if (baseURL == "./") {
-             location.replace("https://" + location.hostname + "./index.html");
+             location.replace("https://" + location.hostname + "/index.html");
            } else {
-             location.replace(baseURL + "./index.html");
+             location.replace(location.hostname + "/index.html");
            }
 
       }

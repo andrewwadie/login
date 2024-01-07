@@ -27,10 +27,10 @@ function loginfun() {
         loginpassword.value == allusers[i].password
       ) {
           var z = i
-        if (baseURL == "./") {
-          location.replace("https://" + location.hostname + "./home.html");
+        if (baseURL == "/") {
+          location.replace("https://" + location.hostname + "/home.html");
         } else {
-          location.replace(baseURL + "./home.html");
+          location.replace(location.hostname + "/home.html");
         }
         }
       else {
